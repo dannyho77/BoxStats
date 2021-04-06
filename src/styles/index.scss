@@ -1,0 +1,37 @@
+body {
+    background-image: url("/assets/Canelo-GGG-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header .left-header{
+    font-family: 'Goblin One', cursive;
+    font-size: 70px;
+    margin-left: auto;
+    margin-top: 0.8rem;
+}
+
+header .right-header{
+    margin-left: auto;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#github{
+    height: 60px;
+    margin-top: 3px;
+}
+
+#linkedin{
+    height: 35px;
+    margin-top: 5px;
+    margin-right: 8px;
+}

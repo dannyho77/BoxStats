@@ -23,11 +23,14 @@
         </header>
         <div id='fighter-list'>
             <script>
-                d3.csv("./assets/fighters_info.csv", function(data) {
-                    for (var i = 0; i < data.length; i++) {
-                        console.log(data[i].Name);
-                        console.log(data[i].Alias);
-                    }
+                d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
+                    console.log(data)
+                    var fighterList = d3.select("#fighter-list")
+                    .selectAll("span")
+                    .data(data)
+                    .enter()
+                    .append("span")
+                    .text(function(data) { return data; });
                 });
             </script>
         </div>

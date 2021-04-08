@@ -24,13 +24,7 @@
         <div id='fighter-list'>
             <script>
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-                    console.log(data)
-                    var fighterList = d3.select("#fighter-list")
-                    .selectAll("span")
-                    .data(data)
-                    .enter()
-                    .append("span")
-                    .text(function(data) { return data; });
+                    console.log(data.Alias)
                 });
             </script>
         </div>

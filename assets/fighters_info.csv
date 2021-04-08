@@ -1,5 +1,5 @@
-Name, Alias, Age, Division, Height(cm), Reach(cm), Last Opponent, Result, Rounds, Total Bouts, Total Rounds, Career Win %, Career K.O. %, Current # Titles
-Saul Alvarez, Canelo, 30, super middle, 173cm, 179cm, Avni Yildirim, Win/RTD, 3/12, 58, 417, 95%, 64%, 2
+Name, Alias, Age, Division, Height, Reach, LastOpponent, JabsLanded, OpponentJabsLanded, PowerPunchesLanded, OpponentPowerPunchesLanded, TotalPunchesLanded, OpponentTotalPunchesLanded, Result, Rounds, TotalBouts, TotalRounds, CareerWin%, CareerKO%, Current#Titles
+Saul Alvarez, Canelo, 30, super middle, 173cm, 179cm, Avni Yildirim, 9, 7, 58, 4, 67, 11, Win/RTD, 3/12, 58, 417, 95%, 64%, 2
 Tyson Fury, The Gypsy King, 32,
 Terence Crawford, Bud, 33,
 Anthony Joshua, AJ, 31, 

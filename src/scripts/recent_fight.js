@@ -1,35 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-d3.csv(
-    "https://raw.githubusercontent.com/iamdanahn/RamenTime/main/assets/nutrition_facts.csv",
-    (d) => {
-      return {
-        brand: d.Brand,
-        type: d.Ramen,
-        calories: +d.Calories,
-        totalFat: +d["Total Fat (g)"],
-        sFat: +d["Saturated Fat (g)"],
-        tFat: +d["Trans Fat (g)"],
-        cholesterol: +d["Cholesterol (mg)"],
-        sodium: +d["Sodium (mg)"],
-        carbs: +d["Total Carbohydrates (g)"],
-        fiber: +d["Dietary Fiber (g)"],
-        sugars: +d.Sugars,
-        protein: +d.Protein,
-      }
-    },
-  ).then((data) => {
-    render(data)
-    console.log(data)
-})
-
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 40, left: 100},
     width = 460 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg = d3.select("#fighter-list")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -38,7 +15,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
 
   // Add X axis
   var x = d3.scaleLinear()

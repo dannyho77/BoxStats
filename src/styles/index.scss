@@ -37,6 +37,44 @@ header .right-header{
     margin-right: 15px;
 }
 
+#fighter-list{
+    list-style: none;
+    height: 75vh;
+    width: 17vw;
+    margin-top: 5vh;
+    margin-left: 2vw;
+    overflow:auto;
+    padding:0;
+    text-indent:10px;
+    border: 1px solid rgba(255, 255, 255, 0.500);
+    border-radius: 5px;
+    opacity: 0.7;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+  }
+
+#fighter-list li{
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 200%;
+    margin-left: 50px;
+    margin-bottom: -10px;
+}
+
 #recent-bars{
     background: white;
 }

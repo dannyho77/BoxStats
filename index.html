@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
     <script src="./dist/main.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');</style>
 </head>
 
 <body>
@@ -21,13 +22,23 @@
                 <a href="https://www.linkedin.com/in/danny-ho-a4988360"><img src="./assets/linkedin_icon.png" id="linkedin"/></a>
             </div>
         </header>
-        <div id='fighter-list'>
+        <ul id='fighter-list'>
             <script>
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-                    console.log(data.Name)
+                    const list = []
+                    data.forEach(d => {
+                        list.push(d.Name);
+                    });
+
+                    d3.select("#fighter-list")
+                    .selectAll("li")
+                    .data(list)
+                    .enter()
+                    .append("li")
+                    .text(function(list) { return list; });
                 })
             </script>
-        </div>
+        </ul>
         <div id='picture'>
             
         </div>
@@ -64,7 +75,7 @@
                 // Y axis
                 const y = d3.scaleBand()
                   .range([ 0, height ])
-                  .domain(data.map(function(d) { return (data.Name); }))
+                  .domain(data.map(function(d) { return (d.Name); }))
                   .padding(1);
                 svg.append("g")
                   .call(d3.axisLeft(y))

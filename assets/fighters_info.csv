@@ -1,14 +1,14 @@
-Name,Alias,Age,Division,Height,Reach,LastOpponent,JabsLanded,OpponentJabsLanded,PowerPunchesLanded,OpponentPowerPunchesLanded,TotalPunchesLanded,OpponentTotalPunchesLanded,Result,Rounds,TotalBouts,TotalRounds,CareerWin%,CareerKO%,Current#Titles
-Saul Alvarez,Canelo,30,super middle,173cm,179cm,Avni Yildirim,9,7,58,4,67,11,Win/RTD,3/12,58,417,95%,64%,2
-Tyson Fury, The Gypsy King, 32,
-Terence Crawford, Bud, 33,
-Anthony Joshua, AJ, 31, 
-Errol Spence Jr., The Truth, 31, 
-Deontay Wilder, The Bronze Bomber, 35, 
-Gennadiy Golovkin, GGG, 38, 
-Teofimo Lopez, The Takeover, 23, 
-Jermall Charlo, Hitman, 30, 
-Sergey Kovalev, Krusher, 38, 
+Name,Picture,Age,Division,Height,Reach,LastOpponent,JabsLanded,OpponentJabsLanded,PowerPunchesLanded,OpponentPowerPunchesLanded,TotalPunchesLanded,OpponentTotalPunchesLanded,Result,Rounds,TotalBouts,TotalRounds,CareerWin%,CareerKO%,Current#Titles
+Saul Alvarez,https://upload.wikimedia.org/wikipedia/commons/8/82/Sa%C3%BAl_%C3%81lvarez.png,30,super middle,173cm,179cm,Avni Yildirim,9,7,58,4,67,11,Win/RTD,3/12,58,417,95%,64%,2
+Tyson Fury,pic,32,
+Terence Crawford,pic,33,
+Anthony Joshua,pic,31, 
+Errol Spence Jr.,pic,31, 
+Deontay Wilder,pic,35, 
+Gennadiy Golovkin,pic,38, 
+Teofimo Lopez,pic,23, 
+Jermall Charlo,pic,30, 
+Sergey Kovalev,pic,38, 
 Naoya Inoue, test, 
 Josh Taylor, test, 
 Dillian Whyte,test, 

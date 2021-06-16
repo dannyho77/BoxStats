@@ -47,9 +47,7 @@
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
                     let pic = data[0].Picture;
 
-                    document.write('<img src=" + pic + "/>');
-                    console.log(data);
-                    debugger
+                    document.write(`<img src="${pic}"/>`);
                 })
             </script>
         </div>

@@ -42,12 +42,47 @@
             </script>
         </ul>
 
-        <div class='picture'>
+        <div class='profile'>
             <script>
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-                    let pic = data[0].Picture;
+                    let picUrl = data[0].Picture;
+                    let image = new Image();
+                    image.src = picUrl;
 
-                    document.write(`<img src="${pic}"/>`);
+                    // let name = document.createTextNode(data[0].Name);
+                    let name = document.createElement('p');
+                    name.innerHTML=`${data[0].Name}`;
+                    let age = document.createElement('p');
+                    age.innerHTML=`Age: ${data[0].Age}`;
+                    let division = document.createElement('p');
+                    division.innerHTML=`Division: ${data[0].Division}`;
+                    let height = document.createElement('p');
+                    height.innerHTML=`Height: ${data[0].Height}`;
+                    let reach = document.createElement('p');
+                    reach.innerHTML=`Reach: ${data[0].Reach}`;
+
+                    document.getElementsByClassName('profile')[0]
+                      .appendChild(image)
+
+                      document.getElementsByClassName('profile')[0]
+                        .appendChild(name);
+                      
+                    // document.getElementsByClassName('profile')[0]
+                    //   .appendChild(name)
+
+                    document.getElementsByClassName('profile')[0]
+                      .appendChild(age)
+
+                    document.getElementsByClassName('profile')[0]
+                      .appendChild(division)
+
+                    document.getElementsByClassName('profile')[0]
+                      .appendChild(height)
+
+                    document.getElementsByClassName('profile')[0]
+                      .appendChild(reach)
+
+                    console.log(data)
                 })
             </script>
         </div>

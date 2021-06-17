@@ -2,6 +2,7 @@ body {
     background-image: url("/assets/BoxStats_background.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
+    color: white;
 }
 
 header{
@@ -92,4 +93,8 @@ header .right-header{
 #recent-bars{
     background: white;
     opacity: 0.5;
+}
+
+.profile{
+    color: white;
 }

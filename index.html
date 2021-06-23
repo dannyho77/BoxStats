@@ -96,15 +96,15 @@
 
         <script>
                 
-          d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-            
+          d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/small_fighters_info.csv", function(data) {
+            debugger
             let height = 250;
             let width = 400;
 
             let margin = ({top: 100, right: 0, bottom: 20, left: 40});
 
             const x = d3.scaleBand()
-                      .domain(["Jabs landed", "Opponent Jabs", "Power Punches landed", "Opponent Power Punches", "Total Punches landed", "Opponent Total Punches"])
+                      .domain(Object.keys(data[0]).map(key => key))
                       .range([margin.left, width - margin.right])
                       .padding(0.1);
 

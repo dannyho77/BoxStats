@@ -47,7 +47,7 @@
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
                     let picUrl = data[0].Picture;
                     let image = new Image();
-                    image.src = picUrl;
+                    image.src = 'https://box.live/wp-content/uploads/2016/08/Canelo_Alvarez.png';
 
                     // let name = document.createTextNode(data[0].Name);
                     let name = document.createElement('p');
@@ -64,11 +64,8 @@
                     document.getElementsByClassName('profile')[0]
                       .appendChild(image)
 
-                      document.getElementsByClassName('profile')[0]
-                        .appendChild(name);
-                      
-                    // document.getElementsByClassName('profile')[0]
-                    //   .appendChild(name)
+                    document.getElementsByClassName('profile')[0]
+                      .appendChild(name);
 
                     document.getElementsByClassName('profile')[0]
                       .appendChild(age)
@@ -93,67 +90,124 @@
 
         <script>
                 
-          d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/small_fighters_info.csv", function(data) {
-            debugger
-            let height = 250;
+          d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
+            // debugger
+            let height = 400;
             let width = 400;
-
-            let margin = ({top: 100, right: 0, bottom: 20, left: 40});
+            let margin = 200;
 
             const x = d3.scaleBand()
-                      .domain(Object.keys(data[0]).map(key => key))
-                      .range([margin.left, width - margin.right])
-                      .padding(0.1);
+                      .domain(["Jabs Landed","Opponent Jabs","Power Punches Landed","Opponent Power Punches","Total Punches Landed","Opponent Total Punches"])
+                      .range([0,width])
+                      .padding(0.2);
 
             const y = d3.scaleLinear()
                       .domain([0, d3.max(data, d => d.TotalPunchesLanded)]).nice()
-                      .range([height - margin.bottom, margin.top]);
-
-            const xAxis = g => g
-                        .attr("transform", `translate(0,${height - margin.bottom})`)
-                        .call(d3.axisBottom(x).tickSizeOuter(0));
-
-            const yAxis = g => g
-                        .attr("transform", `translate(${margin.left},0)`)
-                        .call(d3.axisLeft(y));
-                        // .call(g => g.select(".domain").remove());
-
-            // const svg = d3.create("svg")
-            //     .attr("viewBox", [0, 0, 50, 50]);
+                      .range([height, 0]);
 
             const svg = d3.select("#recent-bars").append("svg")
-                          .attr("width", 530)
-                          .attr("height", 400);
+                          .attr("margin", 50)
+                          .attr("width", 800)
+                          .attr("height", 800);
 
             const g = svg.append("g")
                       .attr("transform", "translate(" + 100 + "," + 100 + ")");
-            
-            // const bar = svg.append("g")
-            //     .attr("fill", "steelblue")
-            //     // .selectAll("rect")
-            //     .data(data)
-            //     .enter().append("rect")
-            //     // .style("mix-blend-mode", "multiply")
-            //     .attr("x", x("TotalPunchesLanded"))
-            //     .attr("y", d => {y(d.TotalPunchesLanded)})
-            //     .attr("height", d => y(0) - y(data[0].TotalPunchesLanded))
-            //     .attr("width", x.bandwidth())
-            //     .attr("fill", "steelblue");
 
-            const gx = svg.append("g")
-                .call(xAxis)
-                .selectAll("text")
-                .attr("transform", "rotate(45)")
-                .style("text-anchor", "start");
-            
-            const gy = svg.append("g")
-                .call(yAxis);
+                  g.append("g")
+                  .attr("transform", "translate(0," + height + ")")
+                  .call(d3.axisBottom(x))
+                  .selectAll("text")
+                  .attr("transform", "rotate(45)")
+                  .style("text-anchor", "start")
+                  .attr("font-size", "14px");
 
-            const title = svg.append("g")
-                .attr("transform", `translate(${margin.left + 70},${margin.top})`);
-                title.append("text")
-                .attr("y", -20)
-                .text("Most Recent Fight");
+                  g.append("g")
+                  .call(d3.axisLeft(y).ticks(10))
+                  .append("text")
+                  .attr("y", 6)
+                  .attr("dy", "0.71em")
+                  .attr("text-anchor", "end");
+
+            g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("fill", "steelblue")
+            .attr("x", function(d) { return x("Jabs Landed"); })
+            .attr("y", function(d) { return y(data[0].JabsLanded); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(data[0].JabsLanded); });
+
+            g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("fill", "gray")
+            .attr("x", function(d) { return x("Opponent Jabs"); })
+            .attr("y", function(d) { return y(data[0].OpponentJabsLanded); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(data[0].OpponentJabsLanded); });
+
+            g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("fill", "steelblue")
+            .attr("x", function(d) { return x("Power Punches Landed"); })
+            .attr("y", function(d) { return y(data[0].PowerPunchesLanded); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(data[0].PowerPunchesLanded); });
+
+            g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("fill", "gray")
+            .attr("x", function(d) { return x("Opponent Power Punches"); })
+            .attr("y", function(d) { return y(data[0].OpponentPowerPunchesLanded); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(data[0].OpponentPowerPunchesLanded); });
+
+            g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("fill", "steelblue")
+            .attr("x", function(d) { return x("Total Punches Landed"); })
+            .attr("y", function(d) { return y(data[0].TotalPunchesLanded); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(data[0].TotalPunchesLanded); });
+
+            g.selectAll(".bar")
+            .data(data)
+            .enter().append("rect")
+            .attr("fill", "gray")
+            .attr("x", function(d) { return x("Opponent Total Punches"); })
+            .attr("y", function(d) { return y(data[0].OpponentTotalPunchesLanded); })
+            .attr("width", x.bandwidth())
+            .attr("height", function(d) { return height - y(data[0].OpponentTotalPunchesLanded); });
+
+            svg.append("text")
+            .attr("transform", "translate(100,0)")
+            .attr("x", 10)
+            .attr("y", 80)
+            .attr("font-size", "18px")
+            .attr("font-weight", "600")
+            .text(`Most Recent Fight (vs. ${data[0].LastOpponent})`)
+
+            g.append("g")
+            .attr("transform", "translate(0," + height + ")")
+            .append("text")
+            .attr("y", height - 250)
+            .attr("x", width - 150)
+            .attr("text-anchor", "end")
+            .attr("stroke", "black")
+            .text("Punch Type");
+
+            g.append("g")
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", -50)
+            .attr("x", -150)
+            // .attr("dy", "-5.1em")
+            .attr("text-anchor", "end")
+            .attr("stroke", "black")
+            .text("Punch Count");
 
           });
             

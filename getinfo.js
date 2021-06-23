@@ -1,3 +1,5 @@
+import {} from "./assets/fighters_info.csv";
+
 const addInfo,(string) => {
     // create a new div element
     const newDiv = document.createElement("div");

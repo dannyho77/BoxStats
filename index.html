@@ -112,6 +112,8 @@
                       .domain([0, d3.max(data, d => d.TotalPunchesLanded)]).nice()
                       .range([height - margin.bottom, margin.top]);
 
+                      console.log(y.domain());
+
             const xAxis = g => g
                         .attr("transform", `translate(0,${height - margin.bottom})`)
                         .call(d3.axisBottom(x).tickSizeOuter(0));

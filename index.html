@@ -87,12 +87,9 @@
             </script>
         </div>
 
-        <div id='recent-bars'>
-            
-        </div>
-        <div id='career-bars'>
-            
-        </div>
+        <div id='recent-bars'></div>
+
+        <div id='career-bars'></div>
 
         <script>
                 
@@ -127,17 +124,21 @@
             const svg = d3.select("#recent-bars").append("svg")
                           .attr("width", 530)
                           .attr("height", 400);
+
+            const g = svg.append("g")
+                      .attr("transform", "translate(" + 100 + "," + 100 + ")");
             
-            const bar = svg.append("g")
-                .attr("fill", "steelblue")
-                // .selectAll("rect")
-                .data(data)
-                .enter().append("rect")
-                // .style("mix-blend-mode", "multiply")
-                .attr("x", d => x(data[0].Name))
-                .attr("y", d => {y(data[0].TotalPunchesLanded)})
-                .attr("height", d => y(0) - y(data[0].TotalPunchesLanded))
-                .attr("width", x.bandwidth());
+            // const bar = svg.append("g")
+            //     .attr("fill", "steelblue")
+            //     // .selectAll("rect")
+            //     .data(data)
+            //     .enter().append("rect")
+            //     // .style("mix-blend-mode", "multiply")
+            //     .attr("x", x("TotalPunchesLanded"))
+            //     .attr("y", d => {y(d.TotalPunchesLanded)})
+            //     .attr("height", d => y(0) - y(data[0].TotalPunchesLanded))
+            //     .attr("width", x.bandwidth())
+            //     .attr("fill", "steelblue");
 
             const gx = svg.append("g")
                 .call(xAxis)

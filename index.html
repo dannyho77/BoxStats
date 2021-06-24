@@ -24,6 +24,8 @@
                 <a href="https://dannyho77.github.io/Danny-Ho-dev.bio/#portfolio" target="_blank"><img src="./assets/portfolio_icon.png" id="portfolio"/></a>
             </div>
         </header>
+
+      <div id='top-half'>
         <ul id='fighter-list'>
             <script>
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
@@ -85,6 +87,7 @@
         </div>
 
         <div id='recent-bars'></div>
+      </div>
 
         <div id='career-bars'></div>
 
@@ -106,9 +109,8 @@
                       .range([height, 0]);
 
             const svg = d3.select("#recent-bars").append("svg")
-                          .attr("margin", 50)
-                          .attr("width", 800)
-                          .attr("height", 800);
+                          .attr("width", 650)
+                          .attr("height", 680);
 
             const g = svg.append("g")
                       .attr("transform", "translate(" + 100 + "," + 100 + ")");

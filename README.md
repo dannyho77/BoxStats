@@ -1,4 +1,4 @@
-# BoxStats
+# BoxStats (6/24/2021)
 BoxStats is data visualization tool that shows a quick recent-fight snapshot and a more detailed career-chart of each of the top fighters in the world of boxing today.
 
 ## Functionality & MVP

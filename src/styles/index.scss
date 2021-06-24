@@ -89,13 +89,27 @@ header .right-header{
     margin-bottom: -10px;
 }
 
+#fighter-list{
+    margin-right: 0;
+}
+
+.profile{
+    margin: auto;
+    width: 400px;
+}
+
 #recent-bars{
+    height: 700px;
+    width: 670px;
     border-radius: 5px;
-    background: gray;
+    background: rgb(75, 75, 75);
 }
 
 #recent-bars svg{
-    background: white;
+    background: whitesmoke;
+    border-radius: 5px;
+    margin-left: 9px;
+    margin-top: 10px;
 }
 
 .profile{
@@ -108,4 +122,9 @@ header .right-header{
 
 g .tick{
     font-size: 14px;
+}
+
+#top-half{
+    display: flex;
+    flex-direction: row;
 }

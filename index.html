@@ -47,7 +47,7 @@
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
                     let picUrl = data[0].Picture;
                     let image = new Image();
-                    image.src = 'https://box.live/wp-content/uploads/2016/08/Canelo_Alvarez.png';
+                    image.src = picUrl;
 
                     // let name = document.createTextNode(data[0].Name);
                     let name = document.createElement('p');

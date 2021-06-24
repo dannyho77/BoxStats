@@ -40,57 +40,65 @@
                     .enter()
                     .append("li")
                     .text(function(list) { return list; });
+
+                    let boxers = document.getElementsByTagName('li');
+                        for(let i = 0; i < boxers.length; i++) {
+                            let ele = boxers[i];   
+                            ele.onclick = function() {
+                                console.log('clicked')
+                            };
+                        }
                 })
             </script>
         </ul>
+        <div class="click-info">
+            <div class='profile'>
+                <script>
+                    d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
+                        let picUrl = data[0].Picture;
+                        let image = new Image();
+                        image.src = picUrl;
 
-        <div class='profile'>
-            <script>
-                d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-                    let picUrl = data[0].Picture;
-                    let image = new Image();
-                    image.src = picUrl;
+                        // let name = document.createTextNode(data[0].Name);
+                        let name = document.createElement('p');
+                        name.innerHTML=`${data[0].Name}`;
+                        let age = document.createElement('p');
+                        age.innerHTML=`Age: ${data[0].Age}`;
+                        let division = document.createElement('p');
+                        division.innerHTML=`Division: ${data[0].Division}`;
+                        let height = document.createElement('p');
+                        height.innerHTML=`Height: ${data[0].Height}`;
+                        let reach = document.createElement('p');
+                        reach.innerHTML=`Reach: ${data[0].Reach}`;
 
-                    // let name = document.createTextNode(data[0].Name);
-                    let name = document.createElement('p');
-                    name.innerHTML=`${data[0].Name}`;
-                    let age = document.createElement('p');
-                    age.innerHTML=`Age: ${data[0].Age}`;
-                    let division = document.createElement('p');
-                    division.innerHTML=`Division: ${data[0].Division}`;
-                    let height = document.createElement('p');
-                    height.innerHTML=`Height: ${data[0].Height}`;
-                    let reach = document.createElement('p');
-                    reach.innerHTML=`Reach: ${data[0].Reach}`;
+                        document.getElementsByClassName('profile')[0]
+                          .appendChild(image)
 
-                    document.getElementsByClassName('profile')[0]
-                      .appendChild(image)
+                        document.getElementsByClassName('profile')[0]
+                          .appendChild(name);
 
-                    document.getElementsByClassName('profile')[0]
-                      .appendChild(name);
+                        document.getElementsByClassName('profile')[0]
+                          .appendChild(age)
 
-                    document.getElementsByClassName('profile')[0]
-                      .appendChild(age)
+                        document.getElementsByClassName('profile')[0]
+                          .appendChild(division)
 
-                    document.getElementsByClassName('profile')[0]
-                      .appendChild(division)
+                        document.getElementsByClassName('profile')[0]
+                          .appendChild(height)
 
-                    document.getElementsByClassName('profile')[0]
-                      .appendChild(height)
+                        document.getElementsByClassName('profile')[0]
+                          .appendChild(reach)
 
-                    document.getElementsByClassName('profile')[0]
-                      .appendChild(reach)
+                        console.log(data)
+                    })
+                </script>
+            </div>
 
-                    console.log(data)
-                })
-            </script>
+            <div id='recent-bars'></div>
+
+            <div id='career-bars'></div>
         </div>
-
-        <div id='recent-bars'></div>
       </div>
-
-        <div id='career-bars'></div>
-
         <script>
                 
           d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {

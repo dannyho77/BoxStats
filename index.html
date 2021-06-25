@@ -41,14 +41,133 @@
                     .append("li")
                     .text(function(list) { return list; });
 
+                    let recentFight = function(i){
+                        debugger
+                        let height = 400;
+                        let width = 400;
+                        let margin = 200;
+
+                        const x = d3.scaleBand()
+                                  .domain(["Jabs Landed","Opponent Jabs","Power Punches Landed","Opponent Power Punches","Total Punches Landed","Opponent Total Punches"])
+                                  .range([0,width])
+                                  .padding(0.2);
+
+                        const y = d3.scaleLinear()
+                                  .domain([0, d3.max(data, d => d.TotalPunchesLanded)]).nice()
+                                  .range([height, 0]);
+
+                        const svg = d3.select("#recent-bars").append("svg")
+                                      .attr("width", 650)
+                                      .attr("height", 680);
+
+                        const g = svg.append("g")
+                                  .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+                              g.append("g")
+                              .attr("transform", "translate(0," + height + ")")
+                              .call(d3.axisBottom(x))
+                              .selectAll("text")
+                              .attr("transform", "rotate(45)")
+                              .style("text-anchor", "start")
+                              .attr("font-size", "14px");
+
+                              g.append("g")
+                              .call(d3.axisLeft(y).ticks(10))
+                              .append("text")
+                              .attr("y", 6)
+                              .attr("dy", "0.71em")
+                              .attr("text-anchor", "end");
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "steelblue")
+                        .attr("x", function(d) { return x("Jabs Landed"); })
+                        .attr("y", function(d) { return y(data[i].JabsLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].JabsLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "gray")
+                        .attr("x", function(d) { return x("Opponent Jabs"); })
+                        .attr("y", function(d) { return y(data[i].OpponentJabsLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].OpponentJabsLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "steelblue")
+                        .attr("x", function(d) { return x("Power Punches Landed"); })
+                        .attr("y", function(d) { return y(data[i].PowerPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].PowerPunchesLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "gray")
+                        .attr("x", function(d) { return x("Opponent Power Punches"); })
+                        .attr("y", function(d) { return y(data[i].OpponentPowerPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].OpponentPowerPunchesLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "steelblue")
+                        .attr("x", function(d) { return x("Total Punches Landed"); })
+                        .attr("y", function(d) { return y(data[i].TotalPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].TotalPunchesLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "gray")
+                        .attr("x", function(d) { return x("Opponent Total Punches"); })
+                        .attr("y", function(d) { return y(data[i].OpponentTotalPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
+
+                        svg.append("text")
+                        .attr("transform", "translate(100,0)")
+                        .attr("x", 10)
+                        .attr("y", 80)
+                        .attr("font-size", "18px")
+                        .attr("font-weight", "600")
+                        .text(`Most Recent Fight (vs. ${data[i].LastOpponent})`)
+
+                        g.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .append("text")
+                        .attr("y", height - 250)
+                        .attr("x", width - 150)
+                        .attr("text-anchor", "end")
+                        .attr("stroke", "black")
+                        .text("Punch Type");
+
+                        g.append("g")
+                        .append("text")
+                        .attr("transform", "rotate(-90)")
+                        .attr("y", -50)
+                        .attr("x", -150)
+                        .attr("text-anchor", "end")
+                        .attr("stroke", "black")
+                        .text("Punch Count");
+                    };
+
                     let boxers = document.getElementsByTagName('li');
                         for(let i = 0; i < boxers.length; i++) {
                             let ele = boxers[i];   
+                            // debugger
                             ele.onclick = function() {
-                                console.log('clicked')
+                                recentFight(i);
                             };
-                        }
-                })
+                        };
+                });
             </script>
         </ul>
         <div class="click-info">
@@ -99,10 +218,10 @@
             <div id='career-bars'></div>
         </div>
       </div>
-        <script>
+        <!-- <script>
                 
           d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-            // debugger
+            
             let height = 400;
             let width = 400;
             let margin = 200;
@@ -221,6 +340,6 @@
 
           });
             
-        </script>
+        </script> -->
 </body>
 </html>

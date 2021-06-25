@@ -29,6 +29,7 @@
         <ul id='fighter-list'>
             <script>
                 d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
+
                     const list = []
                     data.forEach(d => {
                         list.push(d.Name);
@@ -41,8 +42,47 @@
                     .append("li")
                     .text(function(list) { return list; });
 
+                    let bio = function(i){
+                        
+                        d3.select(".click-info").append("div")
+                        .attr("id", "profile");
+
+                        let picUrl = data[i].Picture;
+                        let image = new Image();
+                            image.src = picUrl;
+
+                        let name = document.createElement('p');
+                        name.innerHTML=`${data[i].Name}`;
+                        let age = document.createElement('p');
+                        age.innerHTML=`Age: ${data[i].Age}`;
+                        let division = document.createElement('p');
+                        division.innerHTML=`Division: ${data[i].Division}`;
+                        let height = document.createElement('p');
+                        height.innerHTML=`Height: ${data[i].Height}`;
+                        let reach = document.createElement('p');
+                        reach.innerHTML=`Reach: ${data[i].Reach}`;
+
+                        document.getElementById('profile')
+                          .appendChild(image);
+
+                        document.getElementById('profile')
+                          .appendChild(name);
+
+                        document.getElementById('profile')
+                          .appendChild(age);
+
+                        document.getElementById('profile')
+                          .appendChild(division);
+
+                        document.getElementById('profile')
+                          .appendChild(height);
+
+                        document.getElementById('profile')
+                          .appendChild(reach);
+                    };
+
                     let recentFight = function(i){
-                        debugger
+                        // debugger
                         let height = 400;
                         let width = 400;
                         let margin = 200;
@@ -56,9 +96,13 @@
                                   .domain([0, Math.max(data[i].TotalPunchesLanded, data[i].OpponentTotalPunchesLanded)]).nice()
                                   .range([height, 0]);
 
+                        d3.select(".click-info").append("div")
+                        .attr("id", "recent-bars");
+
                         const svg = d3.select("#recent-bars").append("svg")
                                       .attr("width", 650)
-                                      .attr("height", 680);
+                                      .attr("height", 680)
+                                      .attr("id", "recent-bars");
 
                         const g = svg.append("g")
                                   .attr("transform", "translate(" + 100 + "," + 100 + ")");
@@ -132,6 +176,10 @@
                         .attr("width", x.bandwidth())
                         .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
 
+                        // svg.selectAll("rect")
+                        // .transition()
+                        // .duration(1000);
+
                         svg.append("text")
                         .attr("transform", "translate(100,0)")
                         .attr("x", 10)
@@ -159,26 +207,31 @@
                         .text("Punch Count");
                     };
 
-                    let boxers = document.getElementsByTagName('li');
-                        for(let i = 0; i < boxers.length; i++) {
-                            let ele = boxers[i];   
-                            // debugger
-                            ele.onclick = function() {
-                                recentFight(i);
-                            };
-                        };
+                  let boxers = document.getElementsByTagName('li');
+                      for(let i = 0; i < boxers.length; i++) {
+                          let ele = boxers[i];   
+                          // debugger
+                          ele.onclick = function() {
+                              let previous1 = document.getElementById("profile");
+                              let previous2 = document.getElementById("recent-bars");
+                              // debugger
+                              if (previous1 && previous2){previous1.remove(), previous2.remove()};
+                              bio(i);
+                              recentFight(i);
+                          };
+                      };
+
                 });
             </script>
         </ul>
         <div class="click-info">
-            <div class='profile'>
+            <!-- <div id='profile'>
                 <script>
                     d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
                         let picUrl = data[0].Picture;
                         let image = new Image();
                         image.src = picUrl;
 
-                        // let name = document.createTextNode(data[0].Name);
                         let name = document.createElement('p');
                         name.innerHTML=`${data[0].Name}`;
                         let age = document.createElement('p');
@@ -190,32 +243,30 @@
                         let reach = document.createElement('p');
                         reach.innerHTML=`Reach: ${data[0].Reach}`;
 
-                        document.getElementsByClassName('profile')[0]
+                        document.getElementById('profile')
                           .appendChild(image)
 
-                        document.getElementsByClassName('profile')[0]
+                        document.getElementById('profile')
                           .appendChild(name);
 
-                        document.getElementsByClassName('profile')[0]
+                        document.getElementById('profile')
                           .appendChild(age)
 
-                        document.getElementsByClassName('profile')[0]
+                        document.getElementById('profile')
                           .appendChild(division)
 
-                        document.getElementsByClassName('profile')[0]
+                        document.getElementById('profile')
                           .appendChild(height)
 
-                        document.getElementsByClassName('profile')[0]
+                        document.getElementById('profile')
                           .appendChild(reach)
-
-                        console.log(data)
                     })
                 </script>
-            </div>
+            </div> -->
 
-            <div id='recent-bars'></div>
+            <!-- <div id='recent-bars'></div>
 
-            <div id='career-bars'></div>
+            <div id='career-bars'></div> -->
         </div>
       </div>
         <!-- <script>

@@ -94,31 +94,23 @@ header .right-header{
     margin-right: 0;
 }
 
-.profile{
+#profile{
     margin: auto;
     width: 400px;
+    color: white;
+    text-align: center;
 }
 
-#recent-bars{
-    height: 700px;
-    width: 670px;
-    border-radius: 5px;
-    background: rgb(75, 75, 75);
+#profile p{
+    font-weight: 600;
 }
+
 
 #recent-bars svg{
     background: whitesmoke;
     border-radius: 5px;
     margin-left: 9px;
     margin-top: 10px;
-}
-
-.profile{
-    color: white;
-}
-
-.profile p{
-    font-weight: 600;
 }
 
 g .tick{

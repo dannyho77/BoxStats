@@ -82,7 +82,7 @@
                     };
 
                     let recentFight = function(i){
-                        // debugger
+                        
                         let height = 400;
                         let width = 400;
                         let margin = 200;
@@ -183,10 +183,18 @@
                         svg.append("text")
                         .attr("transform", "translate(100,0)")
                         .attr("x", 10)
-                        .attr("y", 80)
+                        .attr("y", 50)
                         .attr("font-size", "18px")
                         .attr("font-weight", "600")
                         .text(`Most Recent Fight (vs. ${data[i].LastOpponent})`)
+
+                        svg.append("text")
+                        .attr("transform", "translate(100,0)")
+                        .attr("x", 150)
+                        .attr("y", 80)
+                        .attr("font-size", "18px")
+                        .attr("font-weight", "600")
+                        .text(`${data[i].Result}`)
 
                         g.append("g")
                         .attr("transform", "translate(0," + height + ")")
@@ -225,172 +233,8 @@
             </script>
         </ul>
         <div class="click-info">
-            <!-- <div id='profile'>
-                <script>
-                    d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-                        let picUrl = data[0].Picture;
-                        let image = new Image();
-                        image.src = picUrl;
-
-                        let name = document.createElement('p');
-                        name.innerHTML=`${data[0].Name}`;
-                        let age = document.createElement('p');
-                        age.innerHTML=`Age: ${data[0].Age}`;
-                        let division = document.createElement('p');
-                        division.innerHTML=`Division: ${data[0].Division}`;
-                        let height = document.createElement('p');
-                        height.innerHTML=`Height: ${data[0].Height}`;
-                        let reach = document.createElement('p');
-                        reach.innerHTML=`Reach: ${data[0].Reach}`;
-
-                        document.getElementById('profile')
-                          .appendChild(image)
-
-                        document.getElementById('profile')
-                          .appendChild(name);
-
-                        document.getElementById('profile')
-                          .appendChild(age)
-
-                        document.getElementById('profile')
-                          .appendChild(division)
-
-                        document.getElementById('profile')
-                          .appendChild(height)
-
-                        document.getElementById('profile')
-                          .appendChild(reach)
-                    })
-                </script>
-            </div> -->
-
-            <!-- <div id='recent-bars'></div>
-
-            <div id='career-bars'></div> -->
         </div>
       </div>
-        <!-- <script>
-                
-          d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
-            
-            let height = 400;
-            let width = 400;
-            let margin = 200;
-
-            const x = d3.scaleBand()
-                      .domain(["Jabs Landed","Opponent Jabs","Power Punches Landed","Opponent Power Punches","Total Punches Landed","Opponent Total Punches"])
-                      .range([0,width])
-                      .padding(0.2);
-
-            const y = d3.scaleLinear()
-                      .domain([0, d3.max(data, d => d.TotalPunchesLanded)]).nice()
-                      .range([height, 0]);
-
-            const svg = d3.select("#recent-bars").append("svg")
-                          .attr("width", 650)
-                          .attr("height", 680);
-
-            const g = svg.append("g")
-                      .attr("transform", "translate(" + 100 + "," + 100 + ")");
-
-                  g.append("g")
-                  .attr("transform", "translate(0," + height + ")")
-                  .call(d3.axisBottom(x))
-                  .selectAll("text")
-                  .attr("transform", "rotate(45)")
-                  .style("text-anchor", "start")
-                  .attr("font-size", "14px");
-
-                  g.append("g")
-                  .call(d3.axisLeft(y).ticks(10))
-                  .append("text")
-                  .attr("y", 6)
-                  .attr("dy", "0.71em")
-                  .attr("text-anchor", "end");
-
-            g.selectAll(".bar")
-            .data(data)
-            .enter().append("rect")
-            .attr("fill", "steelblue")
-            .attr("x", function(d) { return x("Jabs Landed"); })
-            .attr("y", function(d) { return y(data[0].JabsLanded); })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) { return height - y(data[0].JabsLanded); });
-
-            g.selectAll(".bar")
-            .data(data)
-            .enter().append("rect")
-            .attr("fill", "gray")
-            .attr("x", function(d) { return x("Opponent Jabs"); })
-            .attr("y", function(d) { return y(data[0].OpponentJabsLanded); })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) { return height - y(data[0].OpponentJabsLanded); });
-
-            g.selectAll(".bar")
-            .data(data)
-            .enter().append("rect")
-            .attr("fill", "steelblue")
-            .attr("x", function(d) { return x("Power Punches Landed"); })
-            .attr("y", function(d) { return y(data[0].PowerPunchesLanded); })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) { return height - y(data[0].PowerPunchesLanded); });
-
-            g.selectAll(".bar")
-            .data(data)
-            .enter().append("rect")
-            .attr("fill", "gray")
-            .attr("x", function(d) { return x("Opponent Power Punches"); })
-            .attr("y", function(d) { return y(data[0].OpponentPowerPunchesLanded); })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) { return height - y(data[0].OpponentPowerPunchesLanded); });
-
-            g.selectAll(".bar")
-            .data(data)
-            .enter().append("rect")
-            .attr("fill", "steelblue")
-            .attr("x", function(d) { return x("Total Punches Landed"); })
-            .attr("y", function(d) { return y(data[0].TotalPunchesLanded); })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) { return height - y(data[0].TotalPunchesLanded); });
-
-            g.selectAll(".bar")
-            .data(data)
-            .enter().append("rect")
-            .attr("fill", "gray")
-            .attr("x", function(d) { return x("Opponent Total Punches"); })
-            .attr("y", function(d) { return y(data[0].OpponentTotalPunchesLanded); })
-            .attr("width", x.bandwidth())
-            .attr("height", function(d) { return height - y(data[0].OpponentTotalPunchesLanded); });
-
-            svg.append("text")
-            .attr("transform", "translate(100,0)")
-            .attr("x", 10)
-            .attr("y", 80)
-            .attr("font-size", "18px")
-            .attr("font-weight", "600")
-            .text(`Most Recent Fight (vs. ${data[0].LastOpponent})`)
-
-            g.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .append("text")
-            .attr("y", height - 250)
-            .attr("x", width - 150)
-            .attr("text-anchor", "end")
-            .attr("stroke", "black")
-            .text("Punch Type");
-
-            g.append("g")
-            .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", -50)
-            .attr("x", -150)
-            // .attr("dy", "-5.1em")
-            .attr("text-anchor", "end")
-            .attr("stroke", "black")
-            .text("Punch Count");
-
-          });
-            
-        </script> -->
+        
 </body>
 </html>

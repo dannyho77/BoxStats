@@ -43,7 +43,7 @@
                     .text(function(list) { return list; });
 
                     let bio = function(i){
-                        debugger
+                        // debugger
                         d3.select(".click-info").append("div")
                         .attr("id", "profile");
 
@@ -131,6 +131,51 @@
                         .attr("width", x.bandwidth())
                         .attr("height", function(d) { return height - y(data[i].JabsLanded); });
 
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "gray")
+                        .attr("x", function(d) { return x("Opponent Jabs"); })
+                        .attr("y", function(d) { return y(data[i].OpponentJabsLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].OpponentJabsLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "steelblue")
+                        .attr("x", function(d) { return x("Power Punches Landed"); })
+                        .attr("y", function(d) { return y(data[i].PowerPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].PowerPunchesLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "gray")
+                        .attr("x", function(d) { return x("Opponent Power Punches"); })
+                        .attr("y", function(d) { return y(data[i].OpponentPowerPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].OpponentPowerPunchesLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "steelblue")
+                        .attr("x", function(d) { return x("Total Punches Landed"); })
+                        .attr("y", function(d) { return y(data[i].TotalPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].TotalPunchesLanded); });
+
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "gray")
+                        .attr("x", function(d) { return x("Opponent Total Punches"); })
+                        .attr("y", function(d) { return y(data[i].OpponentTotalPunchesLanded); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
+
                         // svg.selectAll("rect")
                         // .transition()
                         // .duration(1000);
@@ -170,6 +215,98 @@
                         .text("Punch Count");
                     };
 
+                    let career = function(i){
+                        
+                        let height = 300;
+                        let width = 1500;
+                        let margin = 200;
+                        let arr = [];
+                        data.map(d => arr.push(parseInt(d.TotalBouts)));
+                    
+                        const x = d3.scaleBand()
+                                  .domain(data.map(d => { return d.Name; }))
+                                  .range([0,width])
+                                  .padding(0.2);
+                    
+                        const y = d3.scaleLinear()
+                                  .domain([0, Math.max(...arr)]).nice()
+                                  .range([height, 0]);
+                    
+                        // d3.select(".click-info").append("div")
+                        // .attr("id", "career-bars");
+                    
+                        const svg = d3.select(".click-info").append("svg")
+                                      .attr("width", 1650)
+                                      .attr("height", 580)
+                                      .attr("id", "career-bars");
+                    
+                        const g = svg.append("g")
+                                  .attr("transform", "translate(" + 100 + "," + 100 + ")");
+                    
+                              g.append("g")
+                              .attr("transform", "translate(0," + height + ")")
+                              .call(d3.axisBottom(x))
+                              .selectAll("text")
+                              .attr("transform", "rotate(45)")
+                              .style("text-anchor", "start")
+                              .attr("font-size", "14px");
+                    
+                              g.append("g")
+                              .call(d3.axisLeft(y).ticks(10))
+                              .append("text")
+                              .attr("y", 6)
+                              .attr("dy", "0.71em")
+                              .attr("text-anchor", "end");
+                    
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "skyblue")
+                        .attr("x", function(d) { return x(d.Name); })
+                        .attr("y", function(d) { return y(d.TotalBouts); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(d.TotalBouts); });
+                    
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("fill", "tomato")
+                        .attr("x", function(d) { return x(data[i].Name); })
+                        .attr("y", function(d) { return y(data[i].TotalBouts); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(data[i].TotalBouts); });
+                    
+                        // svg.selectAll("rect")
+                        // .transition()
+                        // .duration(1000);
+                    
+                        svg.append("text")
+                        .attr("transform", "translate(100,0)")
+                        .attr("x", 150)
+                        .attr("y", 80)
+                        .attr("font-size", "18px")
+                        .attr("font-weight", "600")
+                        .text("Total # of Fights")
+                    
+                        g.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .append("text")
+                        .attr("y", height - 250)
+                        .attr("x", width - 150)
+                        .attr("text-anchor", "end")
+                        .attr("stroke", "black")
+                        .text("# of bouts");
+                    
+                        g.append("g")
+                        .append("text")
+                        .attr("transform", "rotate(-90)")
+                        .attr("y", -50)
+                        .attr("x", -150)
+                        .attr("text-anchor", "end")
+                        .attr("stroke", "black")
+                        .text("fighter");
+                    };
+
                   let boxers = document.getElementsByTagName('li');
                       for(let i = 0; i < boxers.length; i++) {
                           let ele = boxers[i];   
@@ -177,10 +314,12 @@
                           ele.onclick = function() {
                               let previous1 = document.getElementById("profile");
                               let previous2 = document.getElementById("recent-bars");
+                              let previous3 = document.getElementById("career-bars");;
                               // debugger
-                              if (previous1 && previous2){previous1.remove(), previous2.remove()};
+                              if (previous1 && previous2 && previous3){previous1.remove(), previous2.remove(), previous3.remove()};
                               bio(i);
                               recentFight(i);
+                              career(i);
                           };
                       };
 

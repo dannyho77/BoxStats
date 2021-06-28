@@ -48,55 +48,19 @@ let career = function(i){
     .data(data)
     .enter().append("rect")
     .attr("fill", "steelblue")
-    .attr("x", function(d) { return x("Jabs Landed"); })
-    .attr("y", function(d) { return y(data[i].JabsLanded); })
+    .attr("x", function(d) { return x(data[i].Name); })
+    .attr("y", function(d) { return y(data[i].TotalBouts); })
     .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(data[i].JabsLanded); });
+    .attr("height", function(d) { return height - y(data[i].TotalBouts); });
 
-    g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-    .attr("fill", "gray")
-    .attr("x", function(d) { return x("Opponent Jabs"); })
-    .attr("y", function(d) { return y(data[i].OpponentJabsLanded); })
-    .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(data[i].OpponentJabsLanded); });
-
-    g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-    .attr("fill", "steelblue")
-    .attr("x", function(d) { return x("Power Punches Landed"); })
-    .attr("y", function(d) { return y(data[i].PowerPunchesLanded); })
-    .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(data[i].PowerPunchesLanded); });
-
-    g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-    .attr("fill", "gray")
-    .attr("x", function(d) { return x("Opponent Power Punches"); })
-    .attr("y", function(d) { return y(data[i].OpponentPowerPunchesLanded); })
-    .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(data[i].OpponentPowerPunchesLanded); });
-
-    g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-    .attr("fill", "steelblue")
-    .attr("x", function(d) { return x("Total Punches Landed"); })
-    .attr("y", function(d) { return y(data[i].TotalPunchesLanded); })
-    .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(data[i].TotalPunchesLanded); });
-
-    g.selectAll(".bar")
-    .data(data)
-    .enter().append("rect")
-    .attr("fill", "gray")
-    .attr("x", function(d) { return x("Opponent Total Punches"); })
-    .attr("y", function(d) { return y(data[i].OpponentTotalPunchesLanded); })
-    .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
+    // g.selectAll(".bar")
+    // .data(data)
+    // .enter().append("rect")
+    // .attr("fill", "steelblue")
+    // .attr("x", function(d) { return x("Jabs Landed"); })
+    // .attr("y", function(d) { return y(data[i].JabsLanded); })
+    // .attr("width", x.bandwidth())
+    // .attr("height", function(d) { return height - y(data[i].JabsLanded); });
 
     // svg.selectAll("rect")
     // .transition()
@@ -104,19 +68,11 @@ let career = function(i){
 
     svg.append("text")
     .attr("transform", "translate(100,0)")
-    .attr("x", 10)
-    .attr("y", 50)
-    .attr("font-size", "18px")
-    .attr("font-weight", "600")
-    .text(`Most Recent Fight (vs. ${data[i].LastOpponent})`)
-
-    svg.append("text")
-    .attr("transform", "translate(100,0)")
     .attr("x", 150)
     .attr("y", 80)
     .attr("font-size", "18px")
     .attr("font-weight", "600")
-    .text(`${data[i].Result}`)
+    .text("Total # of Fights")
 
     g.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -125,7 +81,7 @@ let career = function(i){
     .attr("x", width - 150)
     .attr("text-anchor", "end")
     .attr("stroke", "black")
-    .text("Punch Type");
+    .text("# of bouts");
 
     g.append("g")
     .append("text")
@@ -134,7 +90,7 @@ let career = function(i){
     .attr("x", -150)
     .attr("text-anchor", "end")
     .attr("stroke", "black")
-    .text("Punch Count");
+    .text("fighter");
 };
 
 });

@@ -125,60 +125,62 @@
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("id", "jabs")
                         .attr("fill", "steelblue")
                         .attr("x", function(d) { return x("Jabs Landed"); })
-                        .attr("y", function(d) { return y(data[i].JabsLanded); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].JabsLanded); });
+                        .attr("height", function(d) { return height - y(0); });
 
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("id", "Ojabs")
                         .attr("fill", "gray")
                         .attr("x", function(d) { return x("Opponent Jabs"); })
-                        .attr("y", function(d) { return y(data[i].OpponentJabsLanded); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].OpponentJabsLanded); });
+                        .attr("height", function(d) { return height - y(0); });
 
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("id", "power")
                         .attr("fill", "steelblue")
                         .attr("x", function(d) { return x("Power Punches Landed"); })
-                        .attr("y", function(d) { return y(data[i].PowerPunchesLanded); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].PowerPunchesLanded); });
+                        .attr("height", function(d) { return height - y(0); });
 
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("id", "Opower")
                         .attr("fill", "gray")
                         .attr("x", function(d) { return x("Opponent Power Punches"); })
-                        .attr("y", function(d) { return y(data[i].OpponentPowerPunchesLanded); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].OpponentPowerPunchesLanded); });
+                        .attr("height", function(d) { return height - y(0); });
 
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("id", "totalP")
                         .attr("fill", "steelblue")
                         .attr("x", function(d) { return x("Total Punches Landed"); })
-                        .attr("y", function(d) { return y(data[i].TotalPunchesLanded); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].TotalPunchesLanded); });
+                        .attr("height", function(d) { return height - y(0); });
 
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("id", "OtotalP")
                         .attr("fill", "gray")
                         .attr("x", function(d) { return x("Opponent Total Punches"); })
-                        .attr("y", function(d) { return y(data[i].OpponentTotalPunchesLanded); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
-
-                        // svg.selectAll("rect")
-                        // .transition()
-                        // .duration(1000);
+                        .attr("height", function(d) { return height - y(0); });
 
                         svg.append("text")
                         .attr("transform", "translate(100,0)")
@@ -213,6 +215,42 @@
                         .attr("text-anchor", "end")
                         .attr("stroke", "black")
                         .text("Punch Count");
+
+                        svg.selectAll("#jabs")
+                        .transition()
+                        .duration(1000)
+                        .attr("y", function(d) { return y(data[i].JabsLanded); })
+                        .attr("height", function(d) { return height - y(data[i].JabsLanded); });
+
+                        svg.selectAll("#Ojabs")
+                        .transition()
+                        .duration(1000)
+                        .attr("y", function(d) { return y(data[i].OpponentJabsLanded); })
+                        .attr("height", function(d) { return height - y(data[i].OpponentJabsLanded); });
+
+                        svg.selectAll("#power")
+                        .transition()
+                        .duration(1000)
+                        .attr("y", function(d) { return y(data[i].PowerPunchesLanded); })
+                        .attr("height", function(d) { return height - y(data[i].PowerPunchesLanded); });
+
+                        svg.selectAll("#Opower")
+                        .transition()
+                        .duration(1000)
+                        .attr("y", function(d) { return y(data[i].OpponentPowerPunchesLanded); })
+                        .attr("height", function(d) { return height - y(data[i].OpponentPowerPunchesLanded); });
+
+                        svg.selectAll("#totalP")
+                        .transition()
+                        .duration(1000)
+                        .attr("y", function(d) { return y(data[i].TotalPunchesLanded); })
+                        .attr("height", function(d) { return height - y(data[i].TotalPunchesLanded); });
+
+                        svg.selectAll("#OtotalP")
+                        .transition()
+                        .duration(1000)
+                        .attr("y", function(d) { return y(data[i].OpponentTotalPunchesLanded); })
+                        .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
                     };
 
                     let career = function(i){
@@ -263,18 +301,18 @@
                         .enter().append("rect")
                         .attr("fill", "skyblue")
                         .attr("x", function(d) { return x(d.Name); })
-                        .attr("y", function(d) { return y(d.TotalBouts); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(d.TotalBouts); });
+                        .attr("height", function(d) { return height - y(0); });
                     
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
                         .attr("fill", "tomato")
                         .attr("x", function(d) { return x(data[i].Name); })
-                        .attr("y", function(d) { return y(data[i].TotalBouts); })
+                        .attr("y", function(d) { return y(0); })
                         .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].TotalBouts); });
+                        .attr("height", function(d) { return height - y(0); });
                     
                         // svg.selectAll("rect")
                         // .transition()
@@ -305,6 +343,12 @@
                         .attr("text-anchor", "end")
                         .attr("stroke", "black")
                         .text("fighter");
+
+                        svg.selectAll("rect")
+                        .transition()
+                        .duration(2000)
+                        .attr("y", function(d) { return y(d.TotalBouts); })
+                        .attr("height", function(d) { return height - y(d.TotalBouts); });
                     };
 
                   let boxers = document.getElementsByTagName('li');

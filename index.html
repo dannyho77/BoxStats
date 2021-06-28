@@ -43,7 +43,7 @@
                     .text(function(list) { return list; });
 
                     let bio = function(i){
-                        
+                        debugger
                         d3.select(".click-info").append("div")
                         .attr("id", "profile");
 
@@ -96,10 +96,10 @@
                                   .domain([0, Math.max(data[i].TotalPunchesLanded, data[i].OpponentTotalPunchesLanded)]).nice()
                                   .range([height, 0]);
 
-                        d3.select(".click-info").append("div")
-                        .attr("id", "recent-bars");
+                        // d3.select(".click-info").append("div")
+                        // .attr("id", "recent-bars");
 
-                        const svg = d3.select("#recent-bars").append("svg")
+                        const svg = d3.select(".click-info").append("svg")
                                       .attr("width", 650)
                                       .attr("height", 680)
                                       .attr("id", "recent-bars");
@@ -130,51 +130,6 @@
                         .attr("y", function(d) { return y(data[i].JabsLanded); })
                         .attr("width", x.bandwidth())
                         .attr("height", function(d) { return height - y(data[i].JabsLanded); });
-
-                        g.selectAll(".bar")
-                        .data(data)
-                        .enter().append("rect")
-                        .attr("fill", "gray")
-                        .attr("x", function(d) { return x("Opponent Jabs"); })
-                        .attr("y", function(d) { return y(data[i].OpponentJabsLanded); })
-                        .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].OpponentJabsLanded); });
-
-                        g.selectAll(".bar")
-                        .data(data)
-                        .enter().append("rect")
-                        .attr("fill", "steelblue")
-                        .attr("x", function(d) { return x("Power Punches Landed"); })
-                        .attr("y", function(d) { return y(data[i].PowerPunchesLanded); })
-                        .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].PowerPunchesLanded); });
-
-                        g.selectAll(".bar")
-                        .data(data)
-                        .enter().append("rect")
-                        .attr("fill", "gray")
-                        .attr("x", function(d) { return x("Opponent Power Punches"); })
-                        .attr("y", function(d) { return y(data[i].OpponentPowerPunchesLanded); })
-                        .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].OpponentPowerPunchesLanded); });
-
-                        g.selectAll(".bar")
-                        .data(data)
-                        .enter().append("rect")
-                        .attr("fill", "steelblue")
-                        .attr("x", function(d) { return x("Total Punches Landed"); })
-                        .attr("y", function(d) { return y(data[i].TotalPunchesLanded); })
-                        .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].TotalPunchesLanded); });
-
-                        g.selectAll(".bar")
-                        .data(data)
-                        .enter().append("rect")
-                        .attr("fill", "gray")
-                        .attr("x", function(d) { return x("Opponent Total Punches"); })
-                        .attr("y", function(d) { return y(data[i].OpponentTotalPunchesLanded); })
-                        .attr("width", x.bandwidth())
-                        .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
 
                         // svg.selectAll("rect")
                         // .transition()

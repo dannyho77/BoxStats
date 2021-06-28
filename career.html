@@ -6,23 +6,25 @@ let career = function(i){
     let height = 500;
     let width = 900;
     let margin = 200;
+    let arr = [];
+    data.map(d => arr.push(parseInt(d.TotalBouts)));
 
     const x = d3.scaleBand()
-              .domain(["Jabs Landed","Opponent Jabs","Power Punches Landed","Opponent Power Punches","Total Punches Landed","Opponent Total Punches"])
+              .domain(data.map(d => { return d.Name; }))
               .range([0,width])
               .padding(0.2);
 
     const y = d3.scaleLinear()
-              .domain([0, Math.max(data[i].TotalPunchesLanded, data[i].OpponentTotalPunchesLanded)]).nice()
+              .domain([0, Math.max(...arr)]).nice()
               .range([height, 0]);
 
-    d3.select(".click-info").append("div")
-    .attr("id", "recent-bars");
+    // d3.select(".click-info").append("div")
+    // .attr("id", "career-bars");
 
-    const svg = d3.select("#recent-bars").append("svg")
-                  .attr("width", 650)
-                  .attr("height", 680)
-                  .attr("id", "recent-bars");
+    const svg = d3.select(".click-info").append("svg")
+                  .attr("width", 900)
+                  .attr("height", 500)
+                  .attr("id", "career-bars");
 
     const g = svg.append("g")
               .attr("transform", "translate(" + 100 + "," + 100 + ")");

@@ -1,13 +1,13 @@
 <script>
     d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
 
-        let careerBouts = function(i){
+        let careerRounds = function(i){
                         
                         let height = 300;
                         let width = 1500;
                         let margin = 200;
                         let arr = [];
-                        data.map(d => arr.push(parseInt(d.TotalBouts)));
+                        data.map(d => arr.push(parseInt(d.TotalRounds)));
                     
                         const x = d3.scaleBand()
                                   .domain(data.map(d => { return d.Name; }))
@@ -19,7 +19,7 @@
                                   .range([height, 0]);
                     
                         
-                        const AselectItems = ["career: Bouts", "career: Rounds Fought", "career: K.O. %", "career: Win %"];
+                        const AselectItems = ["career: Rounds Fought", "career: Bouts", "career: K.O. %", "career: Win %"];
                         const Aselector = d3.select(".click-info").append("div")
                         .attr("id", "Aselector")
                         .append("span")
@@ -100,7 +100,7 @@
                         .attr("y", 80)
                         .attr("font-size", "18px")
                         .attr("font-weight", "600")
-                        .text("Total # of Fights")
+                        .text("Total # of Rounds Fought")
                     
                         g.append("g")
                         .attr("transform", "translate(0," + height + ")")
@@ -109,7 +109,7 @@
                         .attr("x", width - 150)
                         .attr("text-anchor", "end")
                         .attr("stroke", "black")
-                        .text("# of bouts");
+                        .text("# of rounds");
                     
                         g.append("g")
                         .append("text")
@@ -123,14 +123,14 @@
                         d3.selectAll(".others")
                         .transition()
                         .duration(2000)
-                        .attr("y", function(d) { return y(d.TotalBouts); })
-                        .attr("height", function(d) { return height - y(d.TotalBouts); });
+                        .attr("y", function(d) { return y(d.TotalRounds); })
+                        .attr("height", function(d) { return height - y(d.TotalRounds); });
 
                         d3.selectAll(".current")
                         .transition()
                         .duration(2000)
-                        .attr("y", function(d) { return y(data[i].TotalBouts); })
-                        .attr("height", function(d) { return height - y(data[i].TotalBouts); });
+                        .attr("y", function(d) { return y(data[i].TotalRounds); })
+                        .attr("height", function(d) { return height - y(data[i].TotalRounds); });
 
                     };
 

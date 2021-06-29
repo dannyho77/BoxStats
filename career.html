@@ -1,7 +1,7 @@
 <script>
     d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
 
-        let career = function(i){
+        let careerBouts = function(i){
                         
                         let height = 300;
                         let width = 1500;
@@ -18,18 +18,44 @@
                                   .domain([0, Math.max(...arr)]).nice()
                                   .range([height, 0]);
                     
-                        // d3.select(".click-info").append("div")
-                        // .attr("id", "career-bars");
+                        
+                        const AselectItems = ["career: Bouts", "career: Rounds Fought", "career: K.O. %", "career: Win %"];
+                        const Aselector = d3.select(".click-info").append("div")
+                        .attr("id", "Aselector")
+                        .append("span")
+                        .append("select")
+                        .attr("id", "Aselection")
+                        .attr("name", "tasks")
+                        .selectAll("option")
+                        .data(AselectItems)
+                        .enter()
+                        .append("option")
+                        .attr("value", d => d)
+                        .text(d => d);
+
+                        const BselectItems = ["sort: default", "sort: Descending", "sort: Ascending"];  
+                        const Bselector = d3.select(".click-info").append("div")
+                        .attr("id", "Bselector")
+                        .append("span")
+                        .append("select")
+                        .attr("id", "Bselection")
+                        .attr("name", "tasks")
+                        .selectAll("option")
+                        .data(BselectItems)
+                        .enter()
+                        .append("option")
+                        .attr("value", d => d)
+                        .text(d => d);
                     
                         const svg = d3.select(".click-info").append("svg")
                                       .attr("width", 1650)
                                       .attr("height", 580)
-                                      .attr("id", "career-bars");
+                                      .attr("id", "career-bars-chart");
                     
                         const g = svg.append("g")
                                   .attr("transform", "translate(" + 100 + "," + 100 + ")");
                     
-                              g.append("g")
+                              const xAxis = g.append("g")
                               .attr("transform", "translate(0," + height + ")")
                               .call(d3.axisBottom(x))
                               .selectAll("text")
@@ -47,6 +73,7 @@
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("class", "others")
                         .attr("fill", "skyblue")
                         .attr("x", function(d) { return x(d.Name); })
                         .attr("y", function(d) { return y(0); })
@@ -56,6 +83,7 @@
                         g.selectAll(".bar")
                         .data(data)
                         .enter().append("rect")
+                        .attr("class", "current")
                         .attr("fill", "tomato")
                         .attr("x", function(d) { return x(data[i].Name); })
                         .attr("y", function(d) { return y(0); })
@@ -92,11 +120,18 @@
                         .attr("stroke", "black")
                         .text("fighter");
 
-                        svg.selectAll("rect")
+                        d3.selectAll(".others")
                         .transition()
                         .duration(2000)
                         .attr("y", function(d) { return y(d.TotalBouts); })
                         .attr("height", function(d) { return height - y(d.TotalBouts); });
+
+                        d3.selectAll(".current")
+                        .transition()
+                        .duration(2000)
+                        .attr("y", function(d) { return y(data[i].TotalBouts); })
+                        .attr("height", function(d) { return height - y(data[i].TotalBouts); });
+
                     };
 
 });

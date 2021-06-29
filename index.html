@@ -253,7 +253,7 @@
                         .attr("height", function(d) { return height - y(data[i].OpponentTotalPunchesLanded); });
                     };
 
-                    let career = function(i){
+                    let careerBouts = function(i){
                         
                         let height = 300;
                         let width = 1500;
@@ -270,17 +270,7 @@
                                   .domain([0, Math.max(...arr)]).nice()
                                   .range([height, 0]);
                     
-                        // const sorter = d3.select(".click-info").append("div")
-                        // .attr("id", "career-bars")
-                        // .append("label")
-                        // .attr("id", "sort")
-                        // .append("text")
-                        // .text("Sort(high-low)")
-                        // .append("input")
-                        // .attr("id", "sort1")
-                        // .attr("type", "checkbox")
-                        // .append("text")
-                        // .text("Sort(high-low)");
+                        
                         
                         const AselectItems = ["career: Bouts", "career: Rounds Fought", "career: K.O. %", "career: Win %"];
                         const Aselector = d3.select(".click-info").append("div")
@@ -394,8 +384,6 @@
                         .duration(2000)
                         .attr("y", function(d) { return y(data[i].TotalBouts); })
                         .attr("height", function(d) { return height - y(data[i].TotalBouts); });
-
-
                         
                     };
 
@@ -413,7 +401,7 @@
                               if (previous1){previous1.remove(), previous2.remove(), previous3.remove(), previous4.remove(), previous5.remove()};
                               bio(i);
                               recentFight(i);
-                              career(i);
+                              careerBouts(i);
                           };
                       };
 

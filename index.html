@@ -295,8 +295,10 @@
                           
                           if (value == "career: Rounds Fought") {
                             careerRounds(i);
-                          } else {
-                            console.log('a');
+                          } else if (value == "career: K.O. %") {
+                            careerKO(i);
+                          } else if (value == "career: Win %") {
+                            careerWin(i);
                           }
                         }
 
@@ -398,7 +400,6 @@
                         .duration(2000)
                         .attr("y", function(d) { return y(data[i].TotalBouts); })
                         .attr("height", function(d) { return height - y(data[i].TotalBouts); });
-                        
                     };
 
                     let careerRounds = function(i){
@@ -444,8 +445,10 @@
                           
                           if (value == "career: Bouts") {
                             careerBouts(i);
-                          } else {
-                            console.log('a');
+                          } else if (value == "career: K.O. %") {
+                            careerKO(i);
+                          } else if (value == "career: Win %") {
+                            careerWin(i);
                           }
                         }
 
@@ -543,7 +546,152 @@
                         .duration(2000)
                         .attr("y", function(d) { return y(data[i].TotalRounds); })
                         .attr("height", function(d) { return height - y(data[i].TotalRounds); });
+                    };
 
+                    let careerKO = function(i){
+                        
+                        let height = 300;
+                        let width = 1500;
+                        let margin = 200;
+                        let arr = [];
+                        data.map(d => arr.push(parseInt(d.CareerKO)));
+                    
+                        const x = d3.scaleBand()
+                                  .domain(data.map(d => { return d.Name; }))
+                                  .range([0,width])
+                                  .padding(0.2);
+                    
+                        const y = d3.scaleLinear()
+                                  .domain([0, Math.max(...arr)]).nice()
+                                  .range([height, 0]);
+                        
+                        const AselectItems = ["career: K.O. %", "career: Bouts", "career: Rounds Fought", "career: Win %"];
+                        const Aselector = d3.select(".click-info").append("div")
+                        .attr("id", "Aselector")
+                        .append("span")
+                        .append("select")
+                        .attr("id", "Aselection")
+                        .on('change',onChange)
+                        .attr("name", "tasks")
+                        .selectAll("option")
+                        .data(AselectItems)
+                        .enter()
+                        .append("option")
+                        .attr("value", d => d)
+                        .text(d => d);
+
+                        function onChange() {
+                          value = d3.select("#Aselection").property('value');
+                          prevOptions1 = document.getElementById("Aselector");
+                          prevOptions2 = document.getElementById("Bselector");
+                          prevChart = document.getElementById("career-bars-chart");
+                          prevOptions1.remove();
+                          prevOptions2.remove();
+                          prevChart.remove();
+                          
+                          if (value == "career: Bouts") {
+                            careerBouts(i);
+                          } else if (value == "career: Rounds Fought") {
+                            careerKO(i);
+                          } else if (value == "career: Win %") {
+                            careerWin(i);
+                          }
+                        }
+
+                        const BselectItems = ["sort: default", "sort: Descending", "sort: Ascending"];  
+                        const Bselector = d3.select(".click-info").append("div")
+                        .attr("id", "Bselector")
+                        .append("span")
+                        .append("select")
+                        .attr("id", "Bselection")
+                        .attr("name", "tasks")
+                        .selectAll("option")
+                        .data(BselectItems)
+                        .enter()
+                        .append("option")
+                        .attr("value", d => d)
+                        .text(d => d);
+                    
+                        const svg = d3.select(".click-info").append("svg")
+                                      .attr("width", 1650)
+                                      .attr("height", 580)
+                                      .attr("id", "career-bars-chart");
+                    
+                        const g = svg.append("g")
+                                  .attr("transform", "translate(" + 100 + "," + 100 + ")");
+                    
+                              const xAxis = g.append("g")
+                              .attr("transform", "translate(0," + height + ")")
+                              .call(d3.axisBottom(x))
+                              .selectAll("text")
+                              .attr("transform", "rotate(45)")
+                              .style("text-anchor", "start")
+                              .attr("font-size", "14px");
+                    
+                              g.append("g")
+                              .call(d3.axisLeft(y).ticks(10))
+                              .append("text")
+                              .attr("y", 6)
+                              .attr("dy", "0.71em")
+                              .attr("text-anchor", "end");
+                    
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("class", "others")
+                        .attr("fill", "skyblue")
+                        .attr("x", function(d) { return x(d.Name); })
+                        .attr("y", function(d) { return y(0); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(0); });
+                    
+                        g.selectAll(".bar")
+                        .data(data)
+                        .enter().append("rect")
+                        .attr("class", "current")
+                        .attr("fill", "tomato")
+                        .attr("x", function(d) { return x(data[i].Name); })
+                        .attr("y", function(d) { return y(0); })
+                        .attr("width", x.bandwidth())
+                        .attr("height", function(d) { return height - y(0); });
+                    
+                        svg.append("text")
+                        .attr("transform", "translate(100,0)")
+                        .attr("x", 150)
+                        .attr("y", 80)
+                        .attr("font-size", "18px")
+                        .attr("font-weight", "600")
+                        .text("Total # of Rounds Fought")
+                    
+                        g.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .append("text")
+                        .attr("y", height - 250)
+                        .attr("x", width - 150)
+                        .attr("text-anchor", "end")
+                        .attr("stroke", "black")
+                        .text("# of rounds");
+                    
+                        g.append("g")
+                        .append("text")
+                        .attr("transform", "rotate(-90)")
+                        .attr("y", -50)
+                        .attr("x", -150)
+                        .attr("text-anchor", "end")
+                        .attr("stroke", "black")
+                        .text("fighter");
+
+                        d3.selectAll(".others")
+                        .transition()
+                        .duration(2000)
+                        .attr("y", function(d) { return y(d.CareerKO); })
+                        .attr("height", function(d) { return height - y(d.CareerKO); });
+
+                        d3.selectAll(".current")
+                        .transition()
+                        .duration(2000)
+                        .attr("y", function(d) { return y(data[i].CareerKO); })
+                        .attr("height", function(d) { return height - y(data[i].CareerKO); });
                     };
 
                   let boxers = document.getElementsByTagName('li');

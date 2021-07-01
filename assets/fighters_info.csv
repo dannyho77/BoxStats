@@ -1,51 +1,51 @@
 Name,Picture,Age,Division,Height,Reach,LastOpponent,JabsLanded,OpponentJabsLanded,PowerPunchesLanded,OpponentPowerPunchesLanded,TotalPunchesLanded,OpponentTotalPunchesLanded,Result,TotalBouts,TotalRounds,CareerKO,CareerWin
-Saul Alvarez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Alvarez.png,30,super middle,173cm,179cm,Billy Joe Saunders,15,30,58,30,73,60,Win/RTD,59,425,64%,95%
-Terence Crawford,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Crawford.png,33,welter,173cm,188cm,Kell Brook,16,14,20,12,36,26,Win/TKO,37,208,76%,100%
-Tyson Fury,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Fury.png,32,heavy,206cm,216cm,Deontay Wilder,24,16,58,18,82,34,Win/TKO,31,193,68%,97%
-Errol Spence Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Spence.png,31,welter,177cm,183cm,Danny Garcia,84,14,103,103,187,117,Win/UD,27,132,78%,100%
-Anthony Joshua,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Joshua.png,31,heavy,198cm,208cm,Kubrat Pulev,68,20,48,21,116,41,Win/KO,25,112,88%,96%
-Jermall Charlo,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Charlo1.png,30,middle,183cm,187cm,Juan Macias Montiel,57,7,201,120,258,127,Win/UD,32,171,69%,100%
-Gennadiy Golovkin,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Golovkin.png,38,middle,179cm,178cm,Kamil Szeremeta,94,10,134,49,228,59,Win/RTD,43,219,84%,95%
-Oscar Valdez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Valdez.png,30,super feather,166cm,168cm,Miguel Berchelt,46,35,103,64,149,99,Win/TKO,29,168,79%,100%
-Naoya Inoue, https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Inoue.png,28,bantam,165cm,171cm,Michael Dasmarinas,0,0,0,0,48,40,Win/KO,21,117,86%,100%
-Demetrius Andrade,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Andrade.png,33,middle,183cm,187cm,Liam Williams,38,17,155,93,193,110,Win/UD,30,188,60%,100%
-Gervonta Davis,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Davis.png,26,light,166cm,171cm,Leo Santa Cruz,4,21,80,76,84,97,Win/KO,24,84,96%,100%
-Deontay Wilder,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Wilder.png,35,heavy,201cm,211cm,Tyson Fury,16,24,18,58,34,82,Loss/TKO,44,150,93%,95%
-Shawn Porter,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Porter.png,33,welter,170cm,177cm,Sebastian Formella,0,0,0,0,304,148,Win/UD,35,243,49%,89%
-Oleksander Usyk,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Usyk.png,34,heavy,191cm,198cm,Dereck Chisora,87,29,107,110,194,139,Win/UD,18,144,72%,100%
-Callum Smith,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Smith.png,31,super middle,191cm,198cm,Saul Alvarez,44,88,55,126,99,214,Loss/UD,28,146,68%,96%
-Mikey Garcia,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/MGarcia.png,33,welter,168cm,173cm,Jessie Vargas,55,41,96,101,151,142,Win/UD,41,238,73%,98%
-Mairis Briedis,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Briedis.png,36,cruiser,186cm,190cm,Yuniel Dorticos,0,0,0,0,0,0,Win/MD,28,152,68%,96%
-Jermell Charlo,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Charlo2.png,31,super welter,180cm,185cm,Jeison Rosario,28,30,36,55,64,85,Win/KO,35,234,51%,97%
-Artur Beterbiev,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Beterbiev.png,36,light heavy,182cm,185cm,Adam Deines,34,1,125,76,159,77,Win/TKO,16,72,100%,100%
-Teofimo Lopez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Lopez.png,23,light,173cm,174cm,Vasyl Lomachenko,35,63,148,78,183,141,Win/UD,16,72,75%,100%
-Josh Taylor,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Taylor.png,30,super light,178cm,177cm,Jose Carlos Ramirez,16,18,129,116,145,134,Win/UD,18,103,72%,100%
-Gary Allen Russell Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Russell.png,33,feather,164cm,163cm,Tugstsogt Nyambayar,30,21,104,101,134,122,Win/UD,32,160,56%,97%
-Regis Prograis,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Prograis.png,32,super light,173cm,170cm,Ivan Redkach,0,0,0,0,85,45,Win/TKO,27,119,81%,96%
-Juan Francisco Estrada,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Estrada.png,31,super fly,163cm,168cm,Roman Gonzalez,17,39,297,352,314,391,Win/SD,45,298,62%,93%
-Dillian Whyte,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Whyte.png,33,heavy,193cm,198cm,Alexander Povetkin,27,2,30,6,57,8,Win/TKO,30,164,63%,93%
-Jaime Munguia,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Munguia.png,24,middle,183cm,n/a,Kamil Szeremeta,0,0,0,0,178,72,Win/RTD,37,155,81%,100%
-Jose Zepeda,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Zepeda.png,32,super light,173cm,179cm,Henry Lundy,57,14,51,76,108,90,Win/UD,38,156,68%,94%
-Kell Brook,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Brook.png,35,welter,175cm,175cm,Terence Crawford,14,16,12,20,26,36,Loss/TKO,42,220,64%,93%
-Billy Joe Saunders,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Saunders.png,31,middle,180cm,180cm,Saul Alvarez,30,15,30,58,60,73,Loss/RTD,31,222,45%,97%
-Roman Gonzalez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Gonzalez.png,34,super fly,160cm,163cm,Juan Francisco Estrada,39,17,352,297,391,314,Loss/SD,53,271,77%,94%
-Dmitry Bivol,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Bivol.png,30,light heavy,183cm,183cm,Craig Richards,164,30,70,46,234,76,Win/UD,18,136,61%,100%
-Vasyl Lomachenko,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Lomachenko.png,33,light,170cm,166cm,Teofimo Lopez,63,35,78,148,141,183,Loss/UD,16,143,63%,88%
-Danny Garcia,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/DGarcia.png,33,welter,173cm,174cm,Errol Spence Jr.,14,84,103,103,117,187,Loss/UD,39,270,54%,92%
-Daniel Jacobs,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Jacobs.png,34,super middle,182cm,185cm,Gabriel Rosado,22,23,56,55,78,78,Win/SD,40,186,75%,93%
-Jose Carlos Ramirez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Ramirez.png,28,super light,178cm,183cm,Josh Taylor,18,16,116,129,134,145,Loss/UD,27,139,63%,96%
-Emanuel Navarrete,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Navarrete.png,26,feather,170cm,183cm,Christopher Diaz,16,12,241,171,257,183,Win/TKO,35,177,80%,97%
-Erislandy Lara,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Lara.png,38,middle,175cm,191cm,Thomas Lamanna,0,0,0,0,0,0,Win/KO,34,226,47%,82%
-Brian Carlos Castano,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Castano.png,31,super welter,171cm,171cm,Patrick Teixeira,0,0,0,0,373,197,Win/UD,18,108,67%,94%
-David Benavidez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Benavidez.png,24,super middle,184cm,189cm,Ronald Ellis,52,89,289,95,341,184,Win/TKO,24,108,88%,100%
-Yordenis Ugas,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Ugas.png,34,welter,175cm,175cm,Abel Ramos,160,58,73,51,233,109,Win/SD,30,196,40%,87%
-Kazuto Ioka,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Ioka.png,32,super fly,164cm,167cm,Kosei Tanaka,73,23,101,66,174,89,Win/TKO,28,252,54%,93%
-Chris Eubank Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Eubank.png,31,middle,180cm,184cm,Marcus Morrison,0,0,0,0,0,0,Win/UD,32,196,69%,94%
-Gilberto Ramirez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/GRamirez.png,30,light heavy,189cm,191cm,Alfonso Lopez,0,0,0,0,0,0,Win/TKO,41,237,66%,100%
-Joe Smith Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/JSmith.png,31,light heavy,183cm,193cm,Maxim Vlasov,52,27,174,187,226,214,Win/MD,30,135,70%,90%
-Arsen Goulamirian,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Goulamirian.png,33,cruiser,186cm,187cm,Constantin Bejenaru,0,0,0,0,0,0,Win/RTD,26,142,69%,100%
-Miguel Berchelt,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Berchelt.png,29,super feather,170cm,182cm,Oscar Valdez,35,46,64,103,99,149,Loss/TKO,40,163,83%,95%
-Nonito Donaire,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Donaire.png,38,bantam,170cm,174cm,Nordine Oubaali,6,15,68,18,74,33,Win/KO,47,293,57%,87%
-Ilunga Junior Makabu,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Makabu.png,33,cruiser,183cm,188cm,Olanrewaju Durodola,0,0,0,0,0,0,Win/TKO,30,141,83%,93%
-Caleb Plant,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Plant.png,28,super middle,185cm,188cm,Caleb Truax,55,18,124,29,179,47,Win/UD,21,122,57%,100%
-Devin Haney,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Haney.png,22,light,173cm,180cm,Jorge Linares,79,25,136,91,215,116,Win/UD,26,150,58%,100%
+Saul Alvarez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Alvarez.png,30,super middle,173cm,179cm,Billy Joe Saunders,15,30,58,30,73,60,Win/RTD,59,425,64,95
+Terence Crawford,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Crawford.png,33,welter,173cm,188cm,Kell Brook,16,14,20,12,36,26,Win/TKO,37,208,76,100
+Tyson Fury,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Fury.png,32,heavy,206cm,216cm,Deontay Wilder,24,16,58,18,82,34,Win/TKO,31,193,68,97
+Errol Spence Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Spence.png,31,welter,177cm,183cm,Danny Garcia,84,14,103,103,187,117,Win/UD,27,132,78,100
+Anthony Joshua,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Joshua.png,31,heavy,198cm,208cm,Kubrat Pulev,68,20,48,21,116,41,Win/KO,25,112,88,96
+Jermall Charlo,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Charlo1.png,30,middle,183cm,187cm,Juan Macias Montiel,57,7,201,120,258,127,Win/UD,32,171,69,100
+Gennadiy Golovkin,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Golovkin.png,38,middle,179cm,178cm,Kamil Szeremeta,94,10,134,49,228,59,Win/RTD,43,219,84,95
+Oscar Valdez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Valdez.png,30,super feather,166cm,168cm,Miguel Berchelt,46,35,103,64,149,99,Win/TKO,29,168,79,100
+Naoya Inoue, https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Inoue.png,28,bantam,165cm,171cm,Michael Dasmarinas,0,0,0,0,48,40,Win/KO,21,117,86,100
+Demetrius Andrade,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Andrade.png,33,middle,183cm,187cm,Liam Williams,38,17,155,93,193,110,Win/UD,30,188,60,100
+Gervonta Davis,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Davis.png,26,light,166cm,171cm,Leo Santa Cruz,4,21,80,76,84,97,Win/KO,24,84,96,100
+Deontay Wilder,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Wilder.png,35,heavy,201cm,211cm,Tyson Fury,16,24,18,58,34,82,Loss/TKO,44,150,93,95
+Shawn Porter,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Porter.png,33,welter,170cm,177cm,Sebastian Formella,0,0,0,0,304,148,Win/UD,35,243,49,89
+Oleksander Usyk,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Usyk.png,34,heavy,191cm,198cm,Dereck Chisora,87,29,107,110,194,139,Win/UD,18,144,72,100
+Callum Smith,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Smith.png,31,super middle,191cm,198cm,Saul Alvarez,44,88,55,126,99,214,Loss/UD,28,146,68,96
+Mikey Garcia,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/MGarcia.png,33,welter,168cm,173cm,Jessie Vargas,55,41,96,101,151,142,Win/UD,41,238,73,98
+Mairis Briedis,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Briedis.png,36,cruiser,186cm,190cm,Yuniel Dorticos,0,0,0,0,0,0,Win/MD,28,152,68,96
+Jermell Charlo,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Charlo2.png,31,super welter,180cm,185cm,Jeison Rosario,28,30,36,55,64,85,Win/KO,35,234,51,97
+Artur Beterbiev,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Beterbiev.png,36,light heavy,182cm,185cm,Adam Deines,34,1,125,76,159,77,Win/TKO,16,72,100,100
+Teofimo Lopez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Lopez.png,23,light,173cm,174cm,Vasyl Lomachenko,35,63,148,78,183,141,Win/UD,16,72,75,100
+Josh Taylor,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Taylor.png,30,super light,178cm,177cm,Jose Carlos Ramirez,16,18,129,116,145,134,Win/UD,18,103,72,100
+Gary Allen Russell Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Russell.png,33,feather,164cm,163cm,Tugstsogt Nyambayar,30,21,104,101,134,122,Win/UD,32,160,56,97
+Regis Prograis,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Prograis.png,32,super light,173cm,170cm,Ivan Redkach,0,0,0,0,85,45,Win/TKO,27,119,81,96
+Juan Francisco Estrada,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Estrada.png,31,super fly,163cm,168cm,Roman Gonzalez,17,39,297,352,314,391,Win/SD,45,298,62,93
+Dillian Whyte,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Whyte.png,33,heavy,193cm,198cm,Alexander Povetkin,27,2,30,6,57,8,Win/TKO,30,164,63,93
+Jaime Munguia,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Munguia.png,24,middle,183cm,n/a,Kamil Szeremeta,0,0,0,0,178,72,Win/RTD,37,155,81,100
+Jose Zepeda,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Zepeda.png,32,super light,173cm,179cm,Henry Lundy,57,14,51,76,108,90,Win/UD,38,156,68,94
+Kell Brook,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Brook.png,35,welter,175cm,175cm,Terence Crawford,14,16,12,20,26,36,Loss/TKO,42,220,64,93
+Billy Joe Saunders,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Saunders.png,31,middle,180cm,180cm,Saul Alvarez,30,15,30,58,60,73,Loss/RTD,31,222,45,97
+Roman Gonzalez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Gonzalez.png,34,super fly,160cm,163cm,Juan Francisco Estrada,39,17,352,297,391,314,Loss/SD,53,271,77,94
+Dmitry Bivol,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Bivol.png,30,light heavy,183cm,183cm,Craig Richards,164,30,70,46,234,76,Win/UD,18,136,61,100
+Vasyl Lomachenko,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Lomachenko.png,33,light,170cm,166cm,Teofimo Lopez,63,35,78,148,141,183,Loss/UD,16,143,63,88
+Danny Garcia,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/DGarcia.png,33,welter,173cm,174cm,Errol Spence Jr.,14,84,103,103,117,187,Loss/UD,39,270,54,92
+Daniel Jacobs,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Jacobs.png,34,super middle,182cm,185cm,Gabriel Rosado,22,23,56,55,78,78,Win/SD,40,186,75,93
+Jose Carlos Ramirez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Ramirez.png,28,super light,178cm,183cm,Josh Taylor,18,16,116,129,134,145,Loss/UD,27,139,63,96
+Emanuel Navarrete,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Navarrete.png,26,feather,170cm,183cm,Christopher Diaz,16,12,241,171,257,183,Win/TKO,35,177,80,97
+Erislandy Lara,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Lara.png,38,middle,175cm,191cm,Thomas Lamanna,0,0,0,0,0,0,Win/KO,34,226,47,82
+Brian Carlos Castano,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Castano.png,31,super welter,171cm,171cm,Patrick Teixeira,0,0,0,0,373,197,Win/UD,18,108,67,94
+David Benavidez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Benavidez.png,24,super middle,184cm,189cm,Ronald Ellis,52,89,289,95,341,184,Win/TKO,24,108,88,100
+Yordenis Ugas,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Ugas.png,34,welter,175cm,175cm,Abel Ramos,160,58,73,51,233,109,Win/SD,30,196,40,87
+Kazuto Ioka,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Ioka.png,32,super fly,164cm,167cm,Kosei Tanaka,73,23,101,66,174,89,Win/TKO,28,252,54,93
+Chris Eubank Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Eubank.png,31,middle,180cm,184cm,Marcus Morrison,0,0,0,0,0,0,Win/UD,32,196,69,94
+Gilberto Ramirez,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/GRamirez.png,30,light heavy,189cm,191cm,Alfonso Lopez,0,0,0,0,0,0,Win/TKO,41,237,66,100
+Joe Smith Jr.,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/JSmith.png,31,light heavy,183cm,193cm,Maxim Vlasov,52,27,174,187,226,214,Win/MD,30,135,70,90
+Arsen Goulamirian,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Goulamirian.png,33,cruiser,186cm,187cm,Constantin Bejenaru,0,0,0,0,0,0,Win/RTD,26,142,69,100
+Miguel Berchelt,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Berchelt.png,29,super feather,170cm,182cm,Oscar Valdez,35,46,64,103,99,149,Loss/TKO,40,163,83,95
+Nonito Donaire,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Donaire.png,38,bantam,170cm,174cm,Nordine Oubaali,6,15,68,18,74,33,Win/KO,47,293,57,87
+Ilunga Junior Makabu,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Makabu.png,33,cruiser,183cm,188cm,Olanrewaju Durodola,0,0,0,0,0,0,Win/TKO,30,141,83,93
+Caleb Plant,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Plant.png,28,super middle,185cm,188cm,Caleb Truax,55,18,124,29,179,47,Win/UD,21,122,57,100
+Devin Haney,https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/Haney.png,22,light,173cm,180cm,Jorge Linares,79,25,136,91,215,116,Win/UD,26,150,58,100

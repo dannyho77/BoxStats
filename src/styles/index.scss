@@ -114,11 +114,28 @@ header .right-header{
     margin-top: 10px;
 }
 
+.click-info2 svg{
+    background: rgb(236, 236, 236);
+    border-radius: 5px;
+    margin-left: 9px;
+    margin-top: 10px;
+}
+
+.dropdowns{
+    display: flex;
+    flex-direction: row;
+}
+
 g .tick{
     font-size: 14px;
 }
 
 #top-half{
+    display: flex;
+    flex-direction: row;
+}
+
+.click-info{
     display: flex;
     flex-direction: row;
 }

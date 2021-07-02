@@ -55,9 +55,9 @@ header .right-header{
 
 #fighter-list{
     list-style: none;
-    height: 900px;
-    width: 450px;
-    margin-top: 5vh;
+    height: 700px;
+    width: 360px;
+    margin-top: 2vh;
     margin-left: 2vw;
     overflow:auto;
     overflow-x: hidden;
@@ -85,7 +85,7 @@ header .right-header{
 
 #fighter-list li{
     font-family: 'East Sea Dokdo', cursive;
-    font-size: 40px;
+    font-size: 32px;
     margin-left: 40px;
     margin-bottom: -5px;
     cursor: pointer;
@@ -96,13 +96,20 @@ header .right-header{
 }
 
 #profile{
-    margin: auto;
+    margin-left: 3vw;
+    margin-top: 5vh;
     width: 400px;
     color: white;
     text-align: center;
 }
 
+#profile img{
+    border: solid 0.5px rgb(175, 175, 175);
+    border-radius: 5px;
+}
+
 #profile p{
+    margin-top: 1vh;
     font-weight: 600;
 }
 
@@ -122,6 +129,8 @@ header .right-header{
 }
 
 .dropdowns{
+    margin-top: 2vh;
+    margin-left: 8vw;
     display: flex;
     flex-direction: row;
 }
@@ -141,5 +150,5 @@ g .tick{
 }
 
 #career-bars-chart{
-    margin: 0;
+    margin-left: 8vw;
 }

@@ -23,11 +23,44 @@ BoxStats utilizes vanillaJS as the foundational language to build out each compo
 - The fighter's recent fight stats (CompuBox punch stats, counting jabs, power punches and total punches) will also render simultaneously. 
 ![bio/snapshot](https://media.giphy.com/media/QFjS3yUvyXQlPBVAS6/giphy.gif)  
 ```c
-        return(
-            <div onMouseEnter = {() => this.setState({ preview: movie.id })} onMouseLeave = {() => this.setState({ preview: null })}>
-                {previewing ? preview : thumbnail}
-            </div>
-        );
+        let bio = function(i){
+                        
+                        d3.select(".click-info").append("div")
+                        .attr("id", "profile");
+
+                        let picUrl = data[i].Picture;
+                        let image = new Image();
+                            image.src = picUrl;
+
+                        let name = document.createElement('p');
+                        name.innerHTML=`${data[i].Name}`;
+                        let age = document.createElement('p');
+                        age.innerHTML=`Age: ${data[i].Age}`;
+                        let division = document.createElement('p');
+                        division.innerHTML=`Division: ${data[i].Division}`;
+                        let height = document.createElement('p');
+                        height.innerHTML=`Height: ${data[i].Height}`;
+                        let reach = document.createElement('p');
+                        reach.innerHTML=`Reach: ${data[i].Reach}`;
+
+                        document.getElementById('profile')
+                          .appendChild(image);
+
+                        document.getElementById('profile')
+                          .appendChild(name);
+
+                        document.getElementById('profile')
+                          .appendChild(age);
+
+                        document.getElementById('profile')
+                          .appendChild(division);
+
+                        document.getElementById('profile')
+                          .appendChild(height);
+
+                        document.getElementById('profile')
+                          .appendChild(reach);
+                    };
 ```
 
 

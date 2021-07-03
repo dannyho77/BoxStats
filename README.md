@@ -4,7 +4,7 @@
 ## Background
 BoxStats is data visualization app that details various stats for the top 50 currently active boxers in the world today. The app renders CompuBox punch stats for each fighter's most recent fight, as well as their career stats (career K.O. %, career win %, etc.), relative to the other top fighters in the rankings.  
 
-BoxStats utilizes vanillaJS as the foundational language to build out each component/function of the app, as well as DOM manipulation. The D3.js library is also used to create dynamic barcharts.
+BoxStats utilizes vanillaJS as the foundational language to build out each component/function of the app, as well as to affect DOM manipulation. The D3.js library is also used to create dynamic barcharts.
 
 ## Technologies
 - vanilla Javascript
@@ -23,7 +23,9 @@ BoxStats utilizes vanillaJS as the foundational language to build out each compo
 - The fighter's recent fight stats (CompuBox punch stats, counting jabs, power punches and total punches) will also render simultaneously. 
 ![bio/snapshot](https://media.giphy.com/media/QFjS3yUvyXQlPBVAS6/giphy.gif)  
 ```c
-        let bio = function(i){
+        <script>
+        d3.csv("https://raw.githubusercontent.com/dannyho77/BoxStats/main/assets/fighters_info.csv", function(data) {
+                let bio = function(i){
                         
                         d3.select(".click-info").append("div")
                         .attr("id", "profile");
@@ -60,8 +62,12 @@ BoxStats utilizes vanillaJS as the foundational language to build out each compo
 
                         document.getElementById('profile')
                           .appendChild(reach);
-                    };
+                 };
+         )};
 ```
 
-
+### Career Stats
+- A fighter's career stats will appear at the bottom of the page simultaneously with the rendering of the aforemention fighter bio/snapshot.
+- Career Stat charts consist of four distinct charts (career: (1)bouts, (2)rounds, (3)K.O.%, (4)win%), each of which can be viewed by clicking on the respective chart type in a dropdown menu.
+- the currently selected fighter's career bar is highlighted orange to distinguish it from the other top fighters.
 ![career-chart](https://media.giphy.com/media/uwfERUYKxhX3Kcqcnb/giphy.gif)  

@@ -4,6 +4,7 @@ body {
     background-size: 100%;
     background-attachment: fixed;
     color: white;
+    font-family: ars-maquette-web, sans-serif;
 }
 
 header{
@@ -180,20 +181,25 @@ g .tick{
     transform: translate(-50%, -50%);
     max-height: 90%;
     overflow: auto;
-    background: #fff;
+    background-image: url("/assets/BoxStats_modal.jpg");
     box-sizing: border-box;
     padding: 20px;
     box-shadow: 0 1px 5px rgba(0,0,0,0.7);
     border-radius: 4px;
     width: 520px;
-    color: black;
+    text-align: center;
 }
 
 .modal .modal_content > h2 {
     font-size: 28px;
-    font-weight: 200;
+    font-weight: 600;
     margin: 20px 0 40px;
     text-align: center;
+}
+
+.modal .modal_content #terms {
+    margin-top: 20px;
+    font-style: italic;
 }
 
 .modal .modal_content .buttons_wrapper {
@@ -207,6 +213,7 @@ g .tick{
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
+    color: white;
     opacity: 0.5;
     background: none;
     border: none;

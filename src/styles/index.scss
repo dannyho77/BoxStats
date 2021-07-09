@@ -184,7 +184,7 @@ g .tick{
     background-image: url("/assets/BoxStats_modal.jpg");
     box-sizing: border-box;
     padding: 20px;
-    box-shadow: 0 1px 5px rgba(0,0,0,0.7);
+    border: solid 1px rgb(70, 70, 70);
     border-radius: 4px;
     width: 520px;
     text-align: center;
@@ -199,6 +199,7 @@ g .tick{
 
 .modal .modal_content #terms {
     margin-top: 20px;
+    margin-bottom: 10px;
     font-style: italic;
 }
 
@@ -221,4 +222,12 @@ g .tick{
 
 .modal .close_modal:hover {
     opacity: 0.9;
+}
+
+.def{
+    margin-top: 15px;
+}
+
+.innerdef{
+    font-weight: 600;
 }
